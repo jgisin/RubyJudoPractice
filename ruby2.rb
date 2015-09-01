@@ -1,4 +1,4 @@
-=begin
+
 def find_frequency(sentence, word)
 arr=Array.new
 
@@ -8,7 +8,7 @@ arr=Array.new
   return arr.count(word)
 end
 print find_frequency("Hello how are You you", "you")
-=end
+
 
 
 def sort_string(string)
