@@ -1,43 +1,45 @@
-def count_game (count)
- i = 0
+def count_game (count, max_players)
 
- iterator=0
- position=0
- player=1
-  arr = []
-    while i<10 do
+
+ iterator=1 #initializes the direction of the iterator movement (negative or positive)
+ position=0 #initializes the position of the game from 0 to max count
+ player=1 #initializes the player position to the first player of the game
+ max_players
+ arr = [] #creates an array that is later populated with the player names P1-Pmax
+ i = 0
+ while i<max_players do
       arr.push("P#{i+1}")
       i+=1
-    end
-       while  position <  count
+ end #Populates arr with player titles.
+ while  position <  count #primary loop
     
-    if player == 11
+    if player == max_players+1#loops back to player 1 when getting to last player
       player = 1
-    else if player == 0
-      player = 10
+    else if player == 0#loops up to max player when going past player 1
+      player = max_players
     end
       
- 
-      
-    if position%7==0
-      position +=1
-      iterator = -1
-      player += iterator 
-    end
-    else if position%11==0
-      position +=1
-      iterator *=2
+    if position < count #primary iterator without conditions
+      position += 1
       player += iterator
-      iterator /=2
-       end    
-    else if position<100
-    position += 1
+    end
+    
+    if (position)%7==0#multiple of 7 condition switches direction of game
+    
 
-    player += iterator
+      iterator *= -1
+    
+    
+    else if position%11==0#multiple of 11 condition skips a player
+ 
+      player += iterator
+    
+    end       
+
     end
     end
     end
- puts player
+ puts "Player #{arr[player-2]} was the last player to name a number"#outputs final result
 end
 
-count_game(7)
+count_game(8, 10)
