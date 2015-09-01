@@ -1,37 +1,33 @@
-def power(x,y)
-  
+def power(x,y)#Power function, first argument is base, second argument is exponent
   a=1
   b=x
-  
   if y > 0 
   while a < y  do
     x = x*b
-    a+=1
-      
+    a+=1 
   end
 else 
-  x=1
+  x=1 #in the case of something to the zero-th power, sets any value to 1
 end
 return x
 end
 puts power(4,4)
 
 def factorial(x)
- y=1
+y=1
  (1..x).each do |i|
    y *= i 
  end    
-  
-  return y
-  
+return y  
 end
 puts factorial(5)
 
-array = [1,5,"frog",2,1,3,"frog"]
+array = [1,5,"frog",2,1,3,"frog"]#In my coding challenge I used a cheeky answer with array&array instead.
 def uniques(array)
-return array & array
+  hash = Hash[array.map {|x| [x, nil]}]
+  print hash.keys
 end
-print uniques(array)
+uniques(array)
 
 arr1 = ["on","in"]
 arr2 = ["to", "rope"]
@@ -78,7 +74,7 @@ def overlap(array1, array2)
   arr2y = *(array2[0][1]..array2[1][1])
   arrfx = arr1x & arr2x
   arrfy = arr1y & arr2y
-    if arrfx.length >= 2 && arrfy.length >= 2
+    if arrfx.length >= 2 && arrfy.length >= 2 #If they share only 1 value, they are touching but not overlapping
       overlap = true 
     else
       overlap = false
