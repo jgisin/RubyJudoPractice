@@ -1,5 +1,5 @@
-=begin
-def mult_sum(val)
+
+def mult_sum(val)#Sum of multiples of 3 and 5 up to val
   sum=0
   arr = [*(1..val)]
   arr.map! {|i| i%3==0 || i%5==0 ? i : arr.delete(0)  }
@@ -16,7 +16,7 @@ mult_sum(1000)
 
 
 
-def fibonacci(high_val)
+def fibonacci(high_val)#Sum of even fibonacci values up to high_val
    sum = 0
    arr = [1,2]
     (high_val-2).times do
@@ -31,9 +31,9 @@ def fibonacci(high_val)
 end
 
  fibonacci(10)
-=end
 
-def palindrome()
+
+def palindrome()#returns highest palindrome of 3 digit multiplication
   arr1 = []
 arr = 999.downto(100)
     arr.each do |num|
